@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Panier.css">
+    <title>Panier</title>
+</head>
+
+<body>
+    <header>
+        <h1>Matériel Informatique Shop</h1>
+    </header>
+
+    <nav>
+        <a href="#">Accueil</a>
+        <a href="#">À Propos</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="container">
+        <h2>Voici votre Panier</h2>
+        <p>Tous les éléments de votre Panier se trouvent ci-dessous</p>
+    </div>
+    <form name="Liste des produits">
+        <fieldset>
+            <legend>Panier</legend>
+            <label>Produit: <input type="text" name="name"></label>
+            <label>Quantité: <input type="text" name="data"></label>
+
+            <input type="button" value="Sauvegarder"   onclick="SaveItem()">
+            <input type="button" value="Mettre à jour" onclick="ModifyItem()">
+            <input type="button" value="Supprimer" onclick="RemoveItem()">
+        </fieldset>
+        <div id="items_table">
+            <table id="list"></table>
+            <label><input type="button" value="Nettoyer" onclick="ClearAll()">
+            * Supprimer tous les produits</label>
+        </div>
+    </form>
+    <footer>
+        <p>&copy; 2023 Mon Site Web. Tous droits réservés.</p>
+    </footer>
+</body>
+
+</html>
