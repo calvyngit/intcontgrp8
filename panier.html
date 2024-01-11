@@ -1,49 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_panier.css">
-    <title>Panier</title>
+    <title>MatEpsiInfo - Votre Panier</title>
+    <link rel="stylesheet" href="style-panier.css">
 </head>
-
 <body>
     <header>
-        <h1>Matériel Informatique Shop</h1>
-        
-    </header>
-    <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="produits.html">Produits</a></li>
-        <li><a href="panier.html">Panier</a></li>
-    </ul>
-    <div id="user-identification">
-        <a href="inscription.php">S'identifier</a>
-    </div>
-    <div class="container">
-        <h2>Voici votre Panier</h2>
-        <p>Tous les éléments de votre Panier se trouvent ci-dessous</p>
-    </div>
-    <form name="Liste des produits">
-        <fieldset>
-            <legend>Panier</legend>
-            <label>Produit: <input type="text" name="name"></label>
-            <label>Quantité: <input type="text" name="data"></label>
-
-            <input type="button" value="Sauvegarder"   onclick="SaveItem()">
-            <input type="button" value="Mettre à jour" onclick="ModifyItem()">
-            <input type="button" value="Supprimer" onclick="RemoveItem()">
-        </fieldset>
-        <div id="items_table">
-            <table id="list"></table>
-            <label><input type="button" value="Nettoyer" onclick="ClearAll()">
-            * Supprimer tous les produits</label>
+        <div class="container">
+            <h1>MatEpsiInfo - Votre Panier</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="produits.html">Produits</a></li>
+                    <li><a href="panier.html">Panier</a></li>
+                </ul>
+                <div id="user-identification">
+                    <a href="inscription.php">S'identifier</a>
+                </div>
+            </nav>
         </div>
-    </form>
+    </header>
+
+    <main class="container">
+        <section class="panier">
+            <h2>Vos articles sélectionnés</h2>
+
+            <div class="panier-items">
+                <div class="panier-item">
+                    <img src="img/product-1.jpg" alt="Product 1">
+                    <h3>Product 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="price">100 €</p>
+                    <button class="remove-item">Supprimer</button>
+                </div>
+                <div class="panier-item">
+                    <img src="img/product-2.jpg" alt="Product 2">
+                    <h3>Product 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="price">200 €</p>
+                    <button class="remove-item">Supprimer</button>
+                </div>
+            </div>
+
+            <div class="total-price">
+                <h2>Total</h3>
+                <p>Prix total : <span id="total-price">300 €</span></p>
+            </div>
+
+            <button class="checkout-button">Procédez au paiement</button>
+        </section>
+    </main>
+
     <footer>
-        <p>&copy; 2023 Mon Site Web. Tous droits réservés.</p>
+        <div class="container">
+            <p>&copy; 2023 MatEpsiInfo - Vente de matériel informatique</p>
+        </div>
     </footer>
 </body>
-
 </html>
