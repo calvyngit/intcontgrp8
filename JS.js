@@ -1,16 +1,34 @@
 // votre-fichier.js
 let users = [];
 
-function registerUser(regUsername, regPassword) {
+function registerUser() {
+    const regUsername = document.getElementById('regUsername').value;
+    const regPassword = document.getElementById('regPassword').value;
+
     // Valider les données (ajoutez des vérifications supplémentaires selon vos besoins)
-    
+
     // Ajouter l'utilisateur au tableau
     users.push({ username: regUsername, password: regPassword });
+
+    // Afficher la liste des utilisateurs inscrits
+    displayUsers();
+    alert('Inscription réussie !');
 }
 
-function loginUser(loginUsername, loginPassword) {
+function loginUser() {
+    const loginUsername = document.getElementById('loginUsername').value;
+    const loginPassword = document.getElementById('loginPassword').value;
+
     // Vérifier les informations de connexion
-    return users.some(user => user.username === loginUsername && user.password === loginPassword);
+    const loggedIn = users.some(user => user.username === loginUsername && user.password === loginPassword);
+
+    // Afficher le message de bienvenue ou d'échec de connexion
+    if (loggedIn) {
+        alert('Bienvenue, ' + loginUsername + ' !');
+        document.location.href="index.html"; 
+    } else {
+        alert('Échec de la connexion. Veuillez vérifier vos identifiants.');
+    }
 }
 
 function displayUsers() {
@@ -24,5 +42,3 @@ function displayUsers() {
         userListElement.appendChild(listItem);
     });
 }
-
-module.exports = { registerUser, loginUser, displayUsers };
